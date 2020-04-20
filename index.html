@@ -5,60 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Alata&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
 
     <title>Google calculator</title>
+    <link rel="stylesheet" href="light-theme.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <span class="calculator">
-      <span class="display">Hello World!</span> <!-- Arial -->
-      <div class="keyboard"> <!-- Roboto -->
-      <div class="number-field">
-        <span data-number>7</span>
-        <span data-number>8</span>
-        <span data-number>9</span>
-        <span data-number>4</span>
-        <span data-number>5</span>
-        <span data-number>6</span>
-        <span data-number>1</span>
-        <span data-number>2</span>
-        <span data-number>3</span>
-        <span data-number>0</span>
-        <span data-number>.</span>
-        <span data-number>=</span>
-      </div>
-      <div class="opertator-field">
-        <i class="material-icons-outlined">backspace</i>
-        <span data-operator>&#247</span><!-- Teilungszeichen -->
-        <span data-operator>x</span>
-        <span data-operator>-</span>
-        <span data-operator>+</span>
-      </div>
-      <div class="extented-operators">
-        <div class="trigger">&lt;</div>
-        <span data-operator>INV</span>
-        <span data-operator>DEG</span>
-        <span data-operator>sin</span>
-        <span data-operator>cos</span>
-        <span data-operator>tan</span>
-        <span data-operator>%</span>
-        <span data-operator>In</span>
-        <span data-operator>log</span>
-        <span data-operator>&#8730;</span> <!-- Wurzelzeichen -->
-        <span data-operator>^</span>
-        <span data-operator>&pi;</span> <!-- Pi -->
-        <span data-operator>e</span>
-        <span data-operator>(</span>
-        <span data-operator>)</span>
-        <span data-operator>!</span>
+    <div class="calculator">
+      <div class="display">
+        <div class="actions">
+          <span id="mode">RAD</span>
+          <span class="material-icons">more_vert</span>
+        </div>
+        <input id="current" value="1 + 1 - 32(4)" />
+        <div class="history-trigger"></span
+      ></div>
+      <div class="keyboard">
+        <div class="number-block">
+          <span data-number>7</span>
+          <span data-number>8</span>
+          <span data-number>9</span>
+          <span data-number>4</span>
+          <span data-number>5</span>
+          <span data-number>6</span>
+          <span data-number>1</span>
+          <span data-number>2</span>
+          <span data-number>3</span>
+          <span data-number>0</span>
+          <span data-number>.</span>
+          <span data-number>=</span>
+        </div>
+        <div class="operator-block">
+          <span class="material-icons-outlined">backspace</span>
+          <!-- Teilungszeichen -->
+          <span data-operator>&#247;</span>
+          <!-- Malzeichen -->
+          <span data-operator>&#215;</span>
+          <!-- Minuszeichen -->
+          <span data-operator>&#8722;</span>
+          <span data-operator>+</span>
+        </div>
+        <div class="expandable-operators-block">
+          <div class="trigger">
+            <span class="material-icons">
+              keyboard_arrow_left
+            </span>
+          </div>
+          <div class="operator-wrapper">
+            <span data-operator>INV</span>
+            <span data-operator>DEG</span>
+            <span data-operator>sin</span>
+            <span data-operator>cos</span>
+            <span data-operator>tan</span>
+            <span data-operator>%</span>
+            <span data-operator>In</span>
+            <span data-operator>log</span>
+            <!-- Wurzelzeichen -->
+            <span data-operator>&#8730;</span>
+            <span data-operator>^</span>
+            <!-- Pi -->
+            <span data-operator>&pi;</span>
+            <span data-operator>e</span>
+            <span data-operator>(</span>
+            <span data-operator>)</span>
+            <span data-operator>!</span>
+          </div>
+        </div>
       </div>
     </div>
-    </div>
-    
+
+    <script src="./app.js"></script>
   </body>
 </html>

@@ -1,0 +1,10 @@
+:root {
+  /* Colors */
+  --bg: #f1f3f4;
+  --bg-accent: #ffffff;
+  --operator-color: #1a73e8;
+  --expandable-operators-bg: var(--operator-color);
+  --expandable-operators-color: #ffffff;
+  --default-color: #000000;
+  --border-color: #e5e7e8;
+}

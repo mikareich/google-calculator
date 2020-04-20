@@ -1,98 +1,129 @@
-body {
-  margin: 0px;
-  font-family: "Noto Sans", sans-serif;
-}
-.parent {
-  display: inline-grid;
-  grid-template-columns: repeat(4, 1fr) 0.3fr;
-  grid-template-rows: repeat(20, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  background-color: #1f2326;
-  color: white;
-  width: 100vw;
-  height: 400px;
-  font-size: 24px;
+:root {
+  /* Sizes */
+  --expandable-operators-trigger-size: 30px;
+  --keyboard-size: 60%;
+  --display-size: 40%;
+
+  /* Animations */
+  --transition-speed: 300ms;
 }
 
-.parent * {
+html,
+body {
+  margin: 0px;
+  overflow: hidden;
+}
+
+.calculator {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  color: var(--default-color);
+}
+
+/* ======== Display styles ===========*/
+
+.display {
+  height: calc(var(--display-size) - 20px);
+  width: calc(100% - 20px);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-accent);
+  font-family: "Arial", sans-serif;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0px 2px 5px var(--operator-color);
+  padding: 10px;
 }
-.div1 {
-  grid-area: 16 / 1 / 21 / 2;
+
+.display .actions {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
-.div2 {
-  grid-area: 16 / 2 / 21 / 3;
+
+.display input#current {
+  border: none;
+  padding: unset;
+  background-color: transparent;
+  width: 100%;
+  font-size: 40px;
+  margin: 5px 10px;
+  text-align: right;
+  color: var(--default-color);
 }
-.div3 {
-  grid-area: 16 / 3 / 21 / 4;
+
+.display .history-trigger {
+  width: 30px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--border-color);
 }
-.div4 {
-  grid-area: 11 / 1 / 16 / 2;
+
+/* ======== Keyboard styles =========== */
+.keyboard {
+  background-color: var(--bg);
+  font-family: "Alata", sans-serif;
+  font-size: 24px;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: var(--keyboard-size);
+  bottom: 0;
 }
-.div5 {
-  grid-area: 11 / 2 / 16 / 3;
+
+.number-block *,
+.operator-block *,
+.expandable-operators-block * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
-.div6 {
-  grid-area: 11 / 3 / 16 / 4;
+
+.keyboard .number-block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 70%;
 }
-.div7 {
-  grid-area: 6 / 1 / 11 / 2;
+
+.keyboard .operator-block {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+  color: var(--operator-color);
+  border-left: 1px solid var(--border-color);
 }
-.div8 {
-  grid-area: 6 / 2 / 11 / 3;
+
+.keyboard .expandable-operators-block {
+  position: absolute;
+  width: 80%;
+  background-color: var(--expandable-operators-bg);
+  color: var(--expandable-operators-color);
+  height: 100%;
+  display: flex;
+  right: calc(-80% + var(--expandable-operators-trigger-size));
+  transition: var(--transition-speed);
 }
-.div9 {
-  grid-area: 6 / 3 / 11 / 4;
+.expandable-operators-block .trigger {
+  width: var(--expandable-operators-trigger-size);
+  transition: var(--transition-speed);
 }
-.div10 {
-  grid-area: 1 / 1 / 6 / 2;
+.expandable-operators-block .operator-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
 }
-.div11 {
-  grid-area: 1 / 2 / 6 / 3;
+
+.expandable-operators-block.expand {
+  right: 0;
 }
-.div12 {
-  grid-area: 1 / 3 / 6 / 4;
-}
-.div13 {
-  grid-area: 17 / 4 / 21 / 5;
-  color: #879dd7;
-  border-style: solid;
-  border-color: rgb(64, 68, 71);
-  border-width: 0 0 0 1px;
-}
-.div14 {
-  grid-area: 13 / 4 / 17 / 5;
-  color: #879dd7;
-  border-style: solid;
-  border-color: #14509f;
-  border-width: 0 0 0 1px;
-}
-.div15 {
-  grid-area: 9 / 4 / 13 / 5;
-  color: #879dd7;
-  border-style: solid;
-  border-color: #14509f;
-  border-width: 0 0 0 1px;
-}
-.div16 {
-  grid-area: 5 / 4 / 9 / 5;
-  color: #879dd7;
-  border-style: solid;
-  border-color: #14509f;
-  border-width: 0 0 0 1px;
-}
-.div17 {
-  grid-area: 1 / 4 / 5 / 5;
-  color: #879dd7;
-  border-style: solid;
-  border-color: #14509f;
-  border-width: 0 0 0 1px;
-}
-.div18 {
-  grid-area: 1 / 5 / 21 / 6;
-  margin: unset;
-  background-color: #14509f;
+.expandable-operators-block.expand .trigger {
+  transform: rotate(180deg);
 }
