@@ -42,6 +42,8 @@ body {
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  color: var(--display-actions-color);
+  font-weight: bold;
 }
 
 .display input#current {
@@ -59,7 +61,7 @@ body {
   width: 30px;
   height: 6px;
   border-radius: 3px;
-  background-color: var(--border-color);
+  background-color: var(--history-trigger-bg);
 }
 
 /* ======== Keyboard styles =========== */
