@@ -85,6 +85,11 @@ body {
   width: 100%;
   height: 100%;
 }
+.number-block *::selection,
+.operator-block *::selection,
+.expandable-operators-block *::selection {
+  background-color: transparent;
+}
 
 .keyboard .number-block {
   display: grid;
@@ -94,7 +99,7 @@ body {
 }
 
 .keyboard .operator-block {
-  width: 30%;
+  width: calc(30% - var(--expandable-operators-trigger-size));
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
