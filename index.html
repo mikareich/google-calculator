@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/ripple.css">
     <link rel="shortcut icon" href="img/fav.ico" type="image/x-icon">
+    <link rel="manifest" href="./projects/manifest.json">
   </head>
 
   <body>
@@ -31,9 +32,9 @@
         <input id="current" value="1 + 1 - 32(4)" />
         <div class="history-trigger"></span
       ></div>
-      <div class="keyboard">
+      <div class="keyboard" selectable">
         <div class="number-block">
-          <span data-number>7</span>
+          <span data-number >7</span>
           <span data-number>8</span>
           <span data-number>9</span>
           <span data-number>4</span>
@@ -85,6 +86,6 @@
       </div>
     </div>
 
-    <script src="js/app.js"></script>
+    <script type="module" src="js/app.js"></script>
   </body>
 </html>
