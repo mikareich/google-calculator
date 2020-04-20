@@ -90,10 +90,11 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 70%;
+  overflow: hidden;
 }
 
 .keyboard .operator-block {
-  width: 20%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -101,6 +102,7 @@ body {
   grid-template-rows: repeat(3, 1fr);
   color: var(--operator-color);
   border-left: 1px solid var(--border-color);
+  overflow: hidden;
 }
 
 .keyboard .expandable-operators-block {
@@ -112,6 +114,7 @@ body {
   display: flex;
   right: calc(-80% + var(--expandable-operators-trigger-size));
   transition: var(--transition-speed);
+  overflow: hidden;
 }
 .expandable-operators-block .trigger {
   width: var(--expandable-operators-trigger-size);
